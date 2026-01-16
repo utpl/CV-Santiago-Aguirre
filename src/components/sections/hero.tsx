@@ -102,22 +102,22 @@ export function Hero() {
               </span>
             </motion.div>
             <motion.h1
-  variants={itemVariants}
-  initial="hidden"
-  animate="visible"
-  transition={{
-    y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
-    opacity: { duration: 0.4, ease: "easeOut" }
-  }}
-  className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-tight text-center lg:text-left"
->
-  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-200">
-    {PERSONAL_INFO.name.split(' ').slice(0, 2).join(' ')}
-  </span>
-  <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 mt-1 md:mt-2">
-    {PERSONAL_INFO.name.split(' ').slice(2).join(' ') || '\u00A0'}
-  </span>
-</motion.h1>
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              transition={{
+                y: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+                opacity: { duration: 0.4, ease: "easeOut" }
+              }}
+              className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter leading-tight text-center lg:text-left"
+            >
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-cyan-200">
+                {PERSONAL_INFO.name.split(' ').slice(0, 2).join(' ')}
+              </span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-300 mt-1 md:mt-2">
+                {PERSONAL_INFO.name.split(' ').slice(2).join(' ') || '\u00A0'}
+              </span>
+            </motion.h1>
 
             <motion.div
               variants={itemVariants}
@@ -271,16 +271,16 @@ export function Hero() {
             className="relative"
           >
             <motion.div
-  animate={floatingAnimation}
-  transition={{
-    y: {
-      duration: 3,
-      repeat: Infinity,
-      ease: [0.22, 1, 0.36, 1] // ✅ Usamos el easing como array
-    }
-  }}
-  className="relative"
->
+              animate={floatingAnimation}
+              transition={{
+                y: {
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: [0.22, 1, 0.36, 1] // ✅ Usamos el easing como array
+                }
+              }}
+              className="relative"
+            >
               {/* Marco decorativo */}
               <div className="absolute -inset-4">
                 <div className="absolute inset-0 border-2 border-transparent rounded-3xl bg-gradient-to-br from-blue-600/30 via-transparent to-cyan-600/30 blur-sm"></div>
@@ -316,15 +316,18 @@ export function Hero() {
 
               {/* Imagen principal */}
               <div className="relative">
-                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden">
+                <div className="relative w-full h-[500px] rounded-2xl overflow-hidden bg-slate-900">
                   <Image
                     src={profileImage}
                     alt={PERSONAL_INFO.name}
                     fill
-                    className="object-cover object-center"
+                    className="object-contain p-6"
                     priority
                     sizes="(max-width: 768px) 100vw, 50vw"
                   />
+
+
+
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/20 via-transparent to-slate-950/10"></div>
                 </div>
 
@@ -341,7 +344,7 @@ export function Hero() {
                       <span className="text-sm font-semibold text-cyan-300">ESPECIALISTA</span>
                     </div>
                     <div className="text-center">
-                
+                      <p className="text-xs text-slate-400"></p>
                       <p className="text-sm font-bold text-white">LMS & Ciberseguridad</p>
                     </div>
                   </div>
