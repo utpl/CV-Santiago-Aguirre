@@ -28,7 +28,12 @@ export function Hero() {
               {PROFILE.name}
             </h1>
 
-            <p className="mt-5 text-lg text-gold-soft sm:text-xl">{PROFILE.title}</p>
+            <p className="mt-5 text-lg text-gold-soft sm:text-xl">
+              {PROFILE.title}
+              <span className="mt-1 block text-base text-mist-muted sm:text-lg">
+                {PROFILE.subtitle}
+              </span>
+            </p>
 
             <p className="mt-7 max-w-xl text-base leading-relaxed text-mist-muted">
               {PROFILE.tagline}

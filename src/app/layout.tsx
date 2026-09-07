@@ -23,7 +23,7 @@ const display = localFont({
 });
 
 const description =
-  'Ingeniero en Sistemas especializado en Canvas LMS, Moodle, automatización de contenido educativo y seguridad de la información. Loja, Ecuador.';
+  'Desarrollador full stack con cinco años de experiencia: Python, FastAPI, PostgreSQL, TypeScript, React y Next.js. Loja, Ecuador — abierto a remoto.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -33,18 +33,18 @@ export const metadata: Metadata = {
   },
   description,
   keywords: [
-    'Ingeniero en Sistemas',
-    'Canvas LMS',
-    'Moodle',
-    'Tecnología educativa',
-    'Diseño instruccional',
-    'Ciberseguridad',
+    'Desarrollador Full Stack',
+    'Full Stack Developer',
     'Python',
+    'FastAPI',
+    'PostgreSQL',
+    'TypeScript',
+    'React',
     'Next.js',
+    'Canvas LMS',
+    'Ingeniero en Sistemas',
     'Loja',
     'Ecuador',
-    'UTPL',
-    'EdiLoja',
   ],
   authors: [{ name: PROFILE.name }],
   creator: PROFILE.name,
@@ -88,12 +88,14 @@ const jsonLd = {
   },
   sameAs: [CONTACT.linkedin, CONTACT.github],
   knowsAbout: [
-    'Canvas LMS',
-    'Moodle',
-    'Diseño instruccional',
-    'Automatización de contenido',
-    'Ciberseguridad',
     'Python',
+    'FastAPI',
+    'PostgreSQL',
+    'TypeScript',
+    'React',
+    'Next.js',
+    'Canvas LMS',
+    'Ciberseguridad',
   ],
 };
 

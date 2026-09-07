@@ -7,7 +7,7 @@ export function About() {
     <Section
       id="perfil"
       eyebrow="Perfil profesional"
-      title="Tecnología al servicio del aprendizaje"
+      title="Del modelo de datos a la interfaz"
       bordered={false}
     >
       <div className="grid gap-10 lg:grid-cols-3">

@@ -21,12 +21,11 @@ export function Contact() {
             <div className="relative z-10 max-w-2xl">
               <p className="eyebrow">Contacto</p>
               <h2 className="mt-4 font-display text-3xl font-medium tracking-tight text-mist sm:text-4xl">
-                ¿Tienes un proyecto de tecnología educativa?
+                ¿Buscas un desarrollador full stack?
               </h2>
               <p className="mt-5 text-base leading-relaxed text-mist-muted">
-                Automatización de cursos, personalización de Canvas o Moodle, recursos
-                interactivos, administración de servidores o seguridad de la información.
-                Escríbeme y lo conversamos.
+                Estoy abierto a posiciones full stack, back-end en Python o front-end en
+                React y Next.js, presenciales en Loja o remotas. Escríbeme y conversamos.
               </p>
 
               <div className="mt-9 flex flex-wrap gap-3">

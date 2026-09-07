@@ -1,3 +1,4 @@
+import { ExternalLink, Github } from 'lucide-react';
 import { Section } from './section';
 import { Reveal } from './reveal';
 import { projects } from '@/lib/data';
@@ -8,7 +9,7 @@ export function Projects() {
       id="proyectos"
       eyebrow="Trabajo seleccionado"
       title="Proyectos"
-      intro="Herramientas y sistemas construidos para resolver problemas concretos de producción académica: automatizar lo repetitivo, quitar el HTML de en medio y mantener la infraestructura en pie."
+      intro="Sistemas que diseñé y construí de punta a punta. El código de la mayoría está público; los que tienen despliegue se pueden probar en vivo."
     >
       <div className="grid gap-6 lg:grid-cols-2">
         {projects.map((project, index) => (
@@ -43,12 +44,41 @@ export function Projects() {
                 ))}
               </ul>
 
-              <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="chip">
-                    {tech}
-                  </span>
-                ))}
+              <div className="mt-auto pt-6">
+                <div className="flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="chip">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {(project.repo || project.demo) && (
+                  <div className="mt-5 flex flex-wrap gap-x-6 gap-y-2 border-t border-ink-line pt-4 text-sm">
+                    {project.repo && (
+                      <a
+                        href={project.repo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-mist-muted transition-colors hover:text-gold"
+                      >
+                        <Github className="h-4 w-4" />
+                        Código
+                      </a>
+                    )}
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-gold-soft transition-colors hover:text-gold"
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Ver en vivo
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </article>
           </Reveal>

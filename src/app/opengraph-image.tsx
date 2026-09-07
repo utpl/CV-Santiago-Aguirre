@@ -60,7 +60,7 @@ export default async function OpengraphImage() {
             fontSize: 24,
           }}
         >
-          <div style={{ display: 'flex' }}>Canvas LMS · Moodle · Python · Ciberseguridad</div>
+          <div style={{ display: 'flex' }}>Python · FastAPI · TypeScript · Next.js</div>
           <div style={{ display: 'flex', color: '#F2BF42' }}>Loja, Ecuador</div>
         </div>
       </div>

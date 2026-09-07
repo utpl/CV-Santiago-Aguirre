@@ -9,34 +9,34 @@ import type {
 } from './types';
 
 export const stats: Stat[] = [
-  { value: '5+', label: 'años en tecnología educativa' },
-  { value: 'LMS', label: 'Moodle y Canvas en producción' },
-  { value: '2', label: 'universidades y editoriales atendidas' },
-  { value: 'MSc', label: 'Ciberseguridad (UNIR)' },
+  { value: '5+', label: 'años desarrollando software' },
+  { value: 'Full Stack', label: 'Python / FastAPI y TypeScript / Next.js' },
+  { value: '10+', label: 'proyectos propios en producción' },
+  { value: 'MSc', label: 'Ciberseguridad · UNIR' },
 ];
 
 export const about = [
-  'Ingeniero en Sistemas especializado en plataformas de gestión del aprendizaje. Desde 2021 trabajo en el ecosistema editorial y universitario de Loja, donde llevo cursos desde el guion en Word hasta el aula virtual publicada: virtualización bajo estándares de diseño instruccional, desarrollo de recursos interactivos y automatización de todo lo que se repite.',
-  'Mi trabajo vive en la intersección de tres cosas: el contenido académico, las restricciones reales de Canvas y Moodle, y el código que las reconcilia. He construido pipelines en Python que convierten documentos editoriales en cursos completos vía API, constructores visuales que evitan que un docente tenga que tocar HTML, y decenas de recursos interactivos autocontenidos que funcionan dentro de un iframe sin librerías externas.',
-  'Complemento ese perfil con administración de servidores y seguridad de la información —actualmente cursando el Máster en Ciberseguridad en UNIR—, lo que me permite hacerme cargo del ciclo completo: desarrollar, desplegar, endurecer y mantener.',
+  'Desarrollador full stack con cinco años construyendo software que se usa a diario. En el back trabajo con Python —FastAPI, SQLAlchemy, PostgreSQL, Redis— y en el front con TypeScript, React y Next.js. Escribo sistemas completos: modelo de datos, API, colas de trabajo, interfaz y despliegue.',
+  'Mi experiencia viene del sector editorial y universitario, donde los problemas rara vez son de manual: integrar plataformas con APIs de terceros, procesar documentos con reglas de negocio complejas, automatizar procesos que antes tomaban semanas. Eso me acostumbró a leer documentación ajena, trabajar con restricciones que no elegí y entregar lo que funciona en producción, no lo que funciona en local.',
+  'Documento lo que construyo —decisiones de arquitectura, contratos entre servicios, deuda técnica— porque el código que nadie más puede mantener no sirve. Complemento el perfil con administración de servidores y seguridad de la información, y curso el Máster en Ciberseguridad en UNIR.',
 ];
 
 export const experiences: Experience[] = [
   {
-    position: 'Desarrollador TIC — Ámbito educativo',
+    position: 'Desarrollador — Ámbito educativo',
     company: 'EdiLoja',
     location: 'Loja, Ecuador',
     period: 'Enero 2023 — Presente',
     current: true,
     summary:
-      'Responsable técnico de la producción de cursos virtuales y de las herramientas internas que la sostienen.',
+      'Desarrollo de las plataformas internas de producción de contenido y responsable técnico de la infraestructura que las sostiene.',
     tasks: [
+      'Diseño y desarrollo de aplicaciones en Python (FastAPI, SQLAlchemy, PostgreSQL, Redis) para automatizar la producción editorial',
+      'Interfaces web en TypeScript, React y Next.js, y en htmx cuando el proyecto no justifica un build de front',
+      'Integración con las APIs REST de Canvas LMS: autenticación, subida de archivos y creación de contenido programática',
       'Implementación, personalización y administración de Moodle y Canvas LMS',
-      'Virtualización de cursos bajo estándares de diseño instruccional',
-      'Automatización de la producción de contenido con Python y las APIs REST de Canvas',
-      'Desarrollo de recursos interactivos en HTML, CSS y JavaScript para aulas virtuales',
-      'Administración de servidores, respuesta a incidentes y endurecimiento de infraestructura',
-      'Capacitación y soporte técnico a docentes y equipos editoriales',
+      'Administración de servidores Linux, respuesta a incidentes y endurecimiento de la infraestructura',
+      'Documentación técnica: arquitectura, ADRs, contratos front-back y registro de deuda técnica',
     ],
   },
   {
@@ -48,7 +48,7 @@ export const experiences: Experience[] = [
       'Soporte al área de sistemas en gestión documental y mejora de procesos institucionales.',
     tasks: [
       'Gestión documental y mantenimiento de repositorios institucionales',
-      'Análisis y optimización de procesos TIC existentes',
+      'Análisis y optimización de procesos internos mediante soluciones TIC',
       'Mejora y documentación de sistemas en producción',
     ],
   },
@@ -58,11 +58,11 @@ export const experiences: Experience[] = [
     location: 'Loja, Ecuador',
     period: 'Febrero 2021 — Abril 2022',
     summary:
-      'Producción de metacursos y recursos digitales para programas de educación a distancia.',
+      'Desarrollo front-end de contenido y recursos digitales para programas de educación a distancia.',
     tasks: [
-      'Virtualización de metacursos en HTML y CSS',
-      'Implementación de recursos interactivos embebidos en LMS',
-      'Diseño y maquetación de contenido educativo digital',
+      'Maquetación de metacursos en HTML y CSS para la modalidad abierta y a distancia de la UTPL',
+      'Desarrollo de recursos interactivos autocontenidos en HTML, CSS, JavaScript y SVG',
+      'Revisión y adaptación de parámetros operativos de planes docentes',
     ],
   },
   {
@@ -71,7 +71,7 @@ export const experiences: Experience[] = [
     period: 'Octubre 2020 — Diciembre 2020',
     summary: 'Desarrollo de producto web en proyectos comerciales.',
     tasks: [
-      'Desarrollo front-end y back-end en JavaScript',
+      'Desarrollo front-end y back-end de aplicaciones web en JavaScript',
       'Proyectos: Toosh-Eventos y Megashop',
       'Integración de funcionalidades transaccionales',
     ],
@@ -81,145 +81,153 @@ export const experiences: Experience[] = [
 export const projects: Project[] = [
   {
     title: 'Automatización EdiLoja',
-    role: 'Diseño y desarrollo',
+    role: 'Arquitectura y desarrollo',
     year: '2026',
     summary:
-      'Pipeline completo de migración de cursos en Canvas LMS que comprime metacursos de 16 semanas a formatos de 5 y 8 semanas para periodos extraordinarios, siguiendo la plantilla institucional "Rediseño 3".',
+      'Plataforma completa para la producción de guías didácticas y metacursos de Canvas. Todo el sistema orbita alrededor de un documento único: un agente de IA genera el borrador, los docentes lo revisan en un editor web, un validador aplica las reglas institucionales y el resultado se publica en Canvas.',
     highlights: [
-      'Cadena de módulos en Python: tabla Excel → JSON, extracción vía API de Canvas, mapeo del curso origen con BeautifulSoup, copia de imágenes y archivos, y generación del HTML final',
-      'Interfaz local en Flask para operar todo el proceso sin línea de comandos',
-      'Reglas estructurales codificadas: un archivo por semana, banner con todas las unidades y una "Zona de práctica" con actividades, autoevaluación y actividad evaluada',
-      'Reutilización automática de contextualizaciones y marcado de los casos que requieren redacción nueva',
+      'Back-end en FastAPI con PostgreSQL 17, SQLAlchemy 2, migraciones con Alembic y colas de trabajo en Redis + RQ',
+      'Autenticación con JWT y hashing Argon2; front-end en htmx y Jinja2, sin paso de compilación',
+      'Monorepo con apps, librerías compartidas, esquemas JSON versionados y vocabulario controlado',
+      'Suite de pruebas y documentación propia: arquitectura, ADRs, contrato front-back y registro de deuda técnica',
     ],
-    stack: ['Python', 'Flask', 'BeautifulSoup', 'Canvas REST API', 'JSON', 'HTML/CSS'],
+    stack: ['Python 3.13', 'FastAPI', 'PostgreSQL', 'Redis + RQ', 'SQLAlchemy', 'Alembic', 'htmx'],
+    repo: 'https://github.com/utpl/Atomatizacion_Ediloja',
+  },
+  {
+    title: 'Loja Moda',
+    role: 'Desarrollo full stack',
+    year: '2026',
+    summary:
+      'Ecommerce de moda en Next.js que permite al usuario visualizar cómo le quedaría una prenda a partir de su propia fotografía. Catálogo, registro de usuarios y flujo de compra.',
+    highlights: [
+      'Next.js con App Router y TypeScript de extremo a extremo',
+      'Prueba virtual de prendas sobre la foto del usuario',
+      'Catálogo, cuentas de usuario y carrito con flujo de compra',
+      'Desplegado en Vercel con integración continua desde el repositorio',
+    ],
+    stack: ['Next.js', 'TypeScript', 'React', 'Vercel'],
+    repo: 'https://github.com/utpl/Loja-Moda',
+    demo: 'https://loja-moda-delta.vercel.app',
   },
   {
     title: 'Canvas Course Builder',
     role: 'Diseño y desarrollo',
     year: '2026',
     summary:
-      'Constructor visual de cursos empaquetado como bundle de Theme JS de Canvas. Permite a un docente armar un curso completo sin ver una sola línea de HTML, después de que la universidad restringiera el acceso al editor enriquecido.',
+      'Constructor visual de cursos empaquetado como bundle de Theme JS de Canvas. Permite a un docente armar un curso completo sin ver una línea de HTML, después de que la universidad restringiera el acceso al editor enriquecido.',
     highlights: [
-      'Evita el editor RCE y escribe directamente contra la API REST de Canvas usando la sesión y el token CSRF del propio docente',
-      'Genera la página "Docente" y las ocho páginas de semana con una sola operación',
-      'Interfaz de acordeón por subtema con párrafos, tablas delimitadas por pipes y carga de imágenes mediante el flujo de dos pasos de la Files API',
+      'Evita el editor RCE y escribe directamente contra la API REST de Canvas usando la sesión y el token CSRF del docente',
+      'Genera la página "Docente" y las ocho páginas de semana en una sola operación',
+      'Editor de acordeón por subtema con párrafos, tablas y carga de imágenes vía el flujo de dos pasos de la Files API',
       'Cero exposición de HTML al usuario final',
     ],
-    stack: ['JavaScript', 'Canvas REST API', 'Canvas Theme JS', 'DOM', 'Files API'],
+    stack: ['JavaScript', 'Canvas REST API', 'Files API', 'DOM'],
   },
   {
-    title: 'Validador de guías didácticas',
+    title: 'Apolo — Gestión de personal',
+    role: 'Desarrollo full stack',
+    year: '2025',
+    summary:
+      'Aplicación web para la gestión de personal: registro de empleados, datos y seguimiento, construida sobre Next.js con Firebase como backend.',
+    highlights: [
+      'Next.js con TypeScript y Firebase para autenticación y persistencia',
+      'Modelo de datos y vistas de administración de personal',
+      'Desplegado en Vercel',
+    ],
+    stack: ['Next.js', 'TypeScript', 'Firebase', 'Vercel'],
+    repo: 'https://github.com/utpl/Apolo',
+    demo: 'https://apolo-ten.vercel.app',
+  },
+  {
+    title: 'Pipeline de guías didácticas',
     role: 'Diseño y desarrollo',
     year: '2025 — 2026',
     summary:
-      'Pipeline de procesamiento de documentos Word y validador en navegador para las guías editoriales de EdiLoja, iterado a lo largo de siete versiones hasta la 3.7.',
+      'Procesamiento automatizado de documentos Word para las guías editoriales: normalización de formato, validación contra reglas de estilo y conversión a datos estructurados, iterado a lo largo de varias versiones.',
     highlights: [
       'Normalización de formato APA para tablas y figuras con numeración por campos SEQ',
-      'Detección de tablas fusionadas, reposicionamiento de autoevaluaciones y normalización de leyendas',
+      'Detección de tablas fusionadas, reposicionamiento de secciones y normalización de leyendas',
       'Idempotencia como requisito duro: reprocesar un documento nunca altera lo ya correcto',
-      'Guía de buen etiquetado embebida en la propia herramienta',
-      'Desplegado como HTML estático de cliente sobre hosting compartido con cabeceras de no-caché',
+      'Empaquetado con Docker y migraciones de base de datos con Alembic',
     ],
-    stack: ['Python', 'python-docx', 'JavaScript', 'HTML', 'JSON', 'Hostinger'],
+    stack: ['Python', 'python-docx', 'Docker', 'Alembic', 'JavaScript'],
+    repo: 'https://github.com/utpl/App_Creacion-guias-',
   },
   {
-    title: 'Recursos interactivos para aulas virtuales',
-    role: 'Desarrollo',
+    title: 'Recursos educativos interactivos',
+    role: 'Desarrollo front-end',
     year: '2021 — 2026',
     summary:
-      'Serie continua de recursos de aprendizaje autocontenidos embebidos en Canvas y Moodle: líneas de tiempo, crucigramas, sopas de letras, emparejamiento drag & drop, gráficos económicos en SVG, quizzes de caso e infografías multimedia.',
+      'Serie continua de recursos de aprendizaje autocontenidos embebidos en Canvas y Moodle: líneas de tiempo, crucigramas, emparejamiento drag & drop, gráficos en SVG, quizzes de caso e infografías.',
     highlights: [
       'Cada recurso es un único archivo HTML sin dependencias externas, dimensionado para iframes de 800×800 px',
-      'Fidelidad textual exacta respecto al guion editorial en DOCX',
-      'Componentes reutilizables de Canvas —barras de pestañas, rutas de aprendizaje, resultados de aprendizaje animados— construidos solo con CSS, dado que Canvas elimina JavaScript, manejadores en línea y SVG',
-      'Resolución de falsos positivos del verificador de accesibilidad moviendo texto visible a pseudo-elementos con content: attr()',
+      'Componentes construidos solo con CSS, dado que Canvas elimina JavaScript, manejadores en línea y SVG',
+      'Resolución de falsos positivos del verificador de accesibilidad con pseudo-elementos y content: attr()',
+      'Conversión de recursos en React a HTML vanilla para su distribución',
     ],
-    stack: ['HTML', 'CSS', 'JavaScript', 'SVG', 'Canvas LMS', 'Moodle'],
-  },
-  {
-    title: 'Gobierno Abierto — UTPL',
-    role: 'Desarrollo y adaptación',
-    year: '2026',
-    summary:
-      'Adaptación sistemática de trece recursos interactivos del curso de Gobierno Abierto a la identidad visual institucional de la UTPL.',
-    highlights: [
-      'Paleta institucional aplicada de forma consistente: navy #004170, dorado #F2BF42 y tinta #14202D, reservando rojo y verde para estados de retroalimentación',
-      'Conversión de recursos construidos en React a HTML vanilla autocontenido',
-      'Cobertura de líneas de tiempo, cuestionarios y actividades de arrastrar y soltar',
-    ],
-    stack: ['HTML', 'CSS', 'JavaScript', 'React', 'Sistema de diseño'],
-  },
-  {
-    title: 'Respuesta a incidente y plan de infraestructura',
-    role: 'Análisis y consultoría',
-    year: '2026',
-    summary:
-      'Investigación y erradicación de un compromiso de seguridad en el hosting corporativo de EdiLoja, con documentación técnica y una hoja de ruta de migración a la nube.',
-    highlights: [
-      'Análisis forense que databa el compromiso en aproximadamente 77 días y eliminación de los artefactos maliciosos identificados',
-      'Identificación del complemento responsable del vector de reinfección',
-      'Informes técnicos formales para sustentar la decisión ante la dirección',
-      'Propuesta de migración en tres fases: auditoría, traslado a nube y administración de seguridad continua',
-    ],
-    stack: ['Linux', 'cPanel', 'Hardening', 'AWS / GCP / Azure', 'Documentación técnica'],
+    stack: ['HTML', 'CSS', 'JavaScript', 'SVG', 'React', 'Accesibilidad'],
+    repo: 'https://github.com/utpl/Recursos-Educativos',
   },
 ];
 
 export const stackGroups: StackGroup[] = [
   {
-    title: 'Lenguajes y frameworks',
+    title: 'Back-end',
     items: [
-      'Python',
+      'Python 3.13',
+      'FastAPI',
       'Django',
       'Flask',
-      'JavaScript',
+      'SQLAlchemy',
+      'Alembic',
+      'Redis + RQ',
+      'JWT / Argon2',
+      'Node.js',
+      'Java',
+    ],
+  },
+  {
+    title: 'Front-end',
+    items: [
       'TypeScript',
-      'Vue.js',
       'React',
       'Next.js',
-      'Java',
+      'Vue.js',
+      'Tailwind CSS',
+      'htmx',
       'HTML5',
       'CSS3',
-    ],
-  },
-  {
-    title: 'Plataformas educativas',
-    items: [
-      'Canvas LMS',
-      'Moodle',
-      'Canvas REST API',
-      'Theme JS',
-      'Diseño instruccional',
+      'SVG',
       'Accesibilidad WCAG',
-      'SCORM / iframes',
     ],
   },
   {
-    title: 'Infraestructura y seguridad',
+    title: 'Datos e infraestructura',
     items: [
+      'PostgreSQL',
+      'MongoDB',
+      'Firebase',
+      'Docker',
       'Linux',
       'Windows Server',
-      'Docker',
-      'Redes',
-      'cPanel / Hostinger',
+      'Vercel',
       'AWS Lightsail',
-      'Hardening',
-      'Ethical Hacking',
-      'Respuesta a incidentes',
+      'Git',
+      'Power BI',
     ],
   },
   {
-    title: 'Datos y herramientas',
+    title: 'Integraciones y seguridad',
     items: [
-      'MongoDB',
-      'PostgreSQL',
-      'Power BI',
-      'Odoo',
-      'BeautifulSoup',
+      'Canvas LMS REST API',
+      'Moodle',
+      'Canvas Theme JS',
       'python-docx',
-      'Git',
-      'Tailwind CSS',
-      'Bootstrap',
+      'BeautifulSoup',
+      'Odoo',
+      'Hardening de servidores',
+      'Ethical Hacking',
     ],
   },
 ];
@@ -228,7 +236,7 @@ export const education: Education[] = [
   {
     degree: 'Máster en Ciberseguridad',
     institution: 'UNIR — Universidad Internacional de La Rioja',
-    period: '2022 — Presente',
+    period: 'Finalización prevista 2027',
     status: 'En curso',
     highlight: true,
   },
@@ -250,7 +258,7 @@ export const certifications: Certification[] = [
   {
     title: 'Ethical Hacking',
     organization: 'Hacker Mentor · Quito',
-    year: '2023',
+    year: '2022',
   },
   {
     title: 'Business Intelligence con Power BI',

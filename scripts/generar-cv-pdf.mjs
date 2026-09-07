@@ -10,17 +10,16 @@ const foto = b64(`${B}public/FOTO.jpg`);
 
 const experiencia = [
   {
-    puesto: 'Desarrollador TIC — Ámbito educativo',
+    puesto: 'Desarrollador — Ámbito educativo',
     empresa: 'EdiLoja',
     lugar: 'Loja, Ecuador',
     periodo: '01/2023 — Presente',
     actual: true,
     puntos: [
-      'Implementación, personalización y administración de Moodle y Canvas LMS para instituciones educativas.',
-      'Virtualización de cursos en línea aplicando estándares de diseño instruccional y accesibilidad.',
-      'Automatización de la producción de contenido con Python y las APIs REST de Canvas.',
-      'Desarrollo de recursos interactivos en HTML, CSS y JavaScript embebidos en aulas virtuales.',
-      'Administración de servidores, respuesta a incidentes, endurecimiento de la infraestructura y soporte a docentes.',
+      'Diseño y desarrollo de aplicaciones en Python (FastAPI, SQLAlchemy, PostgreSQL, Redis) para automatizar la producción editorial.',
+      'Interfaces web en TypeScript, React y Next.js, y en htmx cuando el proyecto no justifica un build de front.',
+      'Integración con las APIs REST de Canvas LMS: autenticación, subida de archivos y creación de contenido programática.',
+      'Administración de Moodle y Canvas LMS, servidores Linux y documentación técnica (arquitectura, ADRs, deuda técnica).',
     ],
   },
   {
@@ -29,9 +28,8 @@ const experiencia = [
     lugar: 'Loja, Ecuador',
     periodo: '05/2022 — 12/2022',
     puntos: [
-      'Gestión documental y carga en repositorios institucionales.',
-      'Desarrollo de procesos para mantener un registro histórico accesible para el personal.',
-      'Optimización de procesos internos mediante soluciones TIC.',
+      'Gestión documental y mantenimiento de repositorios institucionales.',
+      'Análisis y optimización de procesos internos mediante soluciones TIC.',
     ],
   },
   {
@@ -40,9 +38,8 @@ const experiencia = [
     lugar: 'Loja, Ecuador',
     periodo: '02/2021 — 04/2022',
     puntos: [
-      'Virtualización de metacursos en HTML y CSS para la modalidad abierta y a distancia de la UTPL.',
-      'Revisión y adaptación de parámetros operativos de planes docentes.',
-      'Implementación de recursos interactivos digitales.',
+      'Maquetación de metacursos en HTML y CSS para la modalidad abierta y a distancia de la UTPL.',
+      'Desarrollo de recursos interactivos autocontenidos en HTML, CSS, JavaScript y SVG.',
     ],
   },
   {
@@ -61,8 +58,16 @@ const proyectos = [
   {
     titulo: 'Automatización EdiLoja',
     anio: '2026',
-    desc: 'Pipeline en Python que migra cursos de Canvas comprimiendo metacursos de 16 semanas a formatos de 5 y 8 semanas: extracción por API, mapeo del curso origen, copia de recursos y generación del HTML final, operado desde una interfaz Flask.',
-    stack: 'Python · Flask · BeautifulSoup · Canvas REST API',
+    desc: 'Plataforma completa para la producción de guías didácticas y metacursos de Canvas: un agente de IA genera el borrador, los docentes lo revisan en un editor web, un validador aplica las reglas institucionales y el resultado se publica en Canvas. Monorepo con pruebas, ADRs y documentación propia.',
+    stack: 'FastAPI · PostgreSQL 17 · Redis + RQ · SQLAlchemy · htmx',
+    enlace: 'github.com/utpl/Atomatizacion_Ediloja',
+  },
+  {
+    titulo: 'Loja Moda',
+    anio: '2026',
+    desc: 'Ecommerce de moda en Next.js que permite al usuario ver cómo le quedaría una prenda a partir de su propia fotografía. Catálogo, cuentas de usuario y flujo de compra, desplegado en Vercel.',
+    stack: 'Next.js · TypeScript · React · Vercel',
+    enlace: 'loja-moda-delta.vercel.app',
   },
   {
     titulo: 'Canvas Course Builder',
@@ -71,34 +76,29 @@ const proyectos = [
     stack: 'JavaScript · Canvas REST API · Files API',
   },
   {
-    titulo: 'Validador de guías didácticas',
-    anio: '2025 — 2026',
-    desc: 'Pipeline Word → JSON y validador en navegador para guías editoriales: normalización APA de tablas y figuras con numeración SEQ, detección de tablas fusionadas y reprocesamiento idempotente.',
-    stack: 'Python · python-docx · JavaScript · HTML',
-  },
-  {
-    titulo: 'Respuesta a incidente e infraestructura',
-    anio: '2026',
-    desc: 'Investigación y erradicación de un compromiso de seguridad en el hosting corporativo, identificación del vector de reinfección, informes técnicos y hoja de ruta de migración a la nube en tres fases.',
-    stack: 'Linux · cPanel · Hardening · AWS / GCP / Azure',
+    titulo: 'Apolo — Gestión de personal',
+    anio: '2025',
+    desc: 'Aplicación web para el registro y seguimiento de personal, construida sobre Next.js con Firebase para autenticación y persistencia. Desplegada en Vercel.',
+    stack: 'Next.js · TypeScript · Firebase',
+    enlace: 'apolo-ten.vercel.app',
   },
 ];
 
 const competencias = [
-  { t: 'Lenguajes y frameworks', v: 'Python · Django · Flask · JavaScript · TypeScript · Vue.js · React · Next.js · Java · HTML5 · CSS3' },
-  { t: 'Plataformas educativas', v: 'Canvas LMS · Moodle · Canvas REST API · Theme JS · Diseño instruccional · Accesibilidad WCAG' },
-  { t: 'Infraestructura y seguridad', v: 'Linux · Windows Server · Docker · Redes · cPanel · AWS Lightsail · Hardening · Ethical Hacking' },
-  { t: 'Datos y herramientas', v: 'MongoDB · PostgreSQL · Power BI · Odoo · BeautifulSoup · Git · Tailwind CSS · Bootstrap' },
+  { t: 'Back-end', v: 'Python 3.13 · FastAPI · Django · Flask · SQLAlchemy · Alembic · Redis + RQ · JWT / Argon2 · Node.js · Java' },
+  { t: 'Front-end', v: 'TypeScript · React · Next.js · Vue.js · Tailwind CSS · htmx · HTML5 · CSS3 · SVG · Accesibilidad WCAG' },
+  { t: 'Datos e infraestructura', v: 'PostgreSQL · MongoDB · Firebase · Docker · Linux · Windows Server · Vercel · AWS Lightsail · Git' },
+  { t: 'Integraciones y seguridad', v: 'Canvas LMS REST API · Moodle · Theme JS · python-docx · BeautifulSoup · Hardening · Ethical Hacking' },
 ];
 
 const formacion = [
-  { t: 'Máster en Ciberseguridad', s: 'UNIR — Universidad Internacional de La Rioja', d: '2022 — Presente' },
+  { t: 'Máster en Ciberseguridad', s: 'UNIR — Universidad Internacional de La Rioja', d: 'Prev. 2027' },
   { t: 'Ingeniero en Sistemas Informáticos y Computación', s: 'UTPL — Universidad Técnica Particular de Loja', d: 'Titulado' },
   { t: 'Asistente en Desarrollo de Software', s: 'Centro de Estudios Latinoamericano', d: '2017' },
 ];
 
 const certificaciones = [
-  { t: 'Ethical Hacking', s: 'Hacker Mentor · Quito', d: '2023' },
+  { t: 'Ethical Hacking', s: 'Hacker Mentor · Quito', d: '2022' },
   { t: 'Business Intelligence con Power BI', s: 'Sociedad Ecuatoriana de Estadística', d: '2022' },
 ];
 
@@ -122,15 +122,16 @@ body{font-family:'Inter',system-ui,sans-serif;color:var(--body);font-size:9.4pt;
 /* ---------- Cabecera ---------- */
 .banda{
   background:linear-gradient(115deg,#00243C 0%,var(--navy) 62%,#125B93 100%);
-  color:#fff;padding:15mm 14mm 11mm;position:relative;
+  color:#fff;padding:11mm 14mm 8.5mm;position:relative;
 }
 .banda::after{content:'';position:absolute;left:0;right:0;bottom:0;height:2.2mm;background:var(--gold-light)}
 .cab{display:flex;gap:9mm;align-items:center}
 .cab-txt{flex:1;min-width:0}
 .nombre{font-family:'Playfair',Georgia,serif;font-weight:600;font-size:25pt;line-height:1.06;letter-spacing:-.2pt}
-.rol{color:#F7D57E;font-size:11pt;margin-top:2.6mm;font-weight:500}
-.lema{color:#C6D6E6;font-size:8.6pt;margin-top:3.2mm;max-width:118mm;line-height:1.5}
-.contacto{display:flex;flex-wrap:wrap;gap:2mm 6mm;margin-top:5mm;font-size:8.3pt;color:#D9E5F1}
+.rol{color:#F7D57E;font-size:12pt;margin-top:2.8mm;font-weight:600}
+.sub{color:#9FBBD6;font-size:8.8pt;margin-top:1.2mm;letter-spacing:.2pt}
+.lema{color:#C6D6E6;font-size:8.4pt;margin-top:2.6mm;max-width:126mm;line-height:1.45}
+.contacto{display:flex;flex-wrap:wrap;gap:1.6mm 5mm;margin-top:4mm;font-size:8.1pt;color:#D9E5F1}
 .contacto b{font-weight:600;color:#F7D57E;letter-spacing:.4pt;font-size:7.1pt;text-transform:uppercase;margin-right:1.4mm}
 .foto{width:30mm;height:37mm;border-radius:2.5mm;object-fit:cover;border:.5mm solid rgba(242,191,66,.55);flex:none;filter:saturate(.95)}
 
@@ -170,6 +171,7 @@ li::before{content:'';position:absolute;left:0;top:1.7mm;width:2mm;height:.45mm;
 .tarjeta h3 em{font-style:normal;font-size:7pt;font-weight:600;color:var(--muted);letter-spacing:.4pt;white-space:nowrap}
 .tarjeta p{font-size:8.3pt;line-height:1.45;margin-top:1.4mm;color:var(--body)}
 .tarjeta .stack{margin-top:2mm;font-size:7.4pt;font-weight:600;color:var(--navy);letter-spacing:.1pt}
+.tarjeta .link{margin-top:1.4mm;font-size:7.2pt;color:var(--gold);font-weight:600}
 
 /* Competencias */
 .comp{display:grid;grid-template-columns:1fr 1fr;gap:3mm 6mm}
@@ -200,14 +202,16 @@ li::before{content:'';position:absolute;left:0;top:1.7mm;width:2mm;height:.45mm;
   <div class="cab">
     <div class="cab-txt">
       <div class="nombre">Hermel Santiago<br>Aguirre Montaño</div>
-      <div class="rol">Ingeniero en Sistemas · Especialista en Tecnología Educativa</div>
-      <div class="lema">Diseño y automatizo la infraestructura que sostiene la educación en línea: plataformas LMS, pipelines de contenido y recursos digitales de aprendizaje.</div>
+      <div class="rol">Desarrollador Full Stack</div>
+      <div class="sub">Python · FastAPI · PostgreSQL · TypeScript · React · Next.js</div>
+      <div class="lema">APIs en Python sobre PostgreSQL y Redis, interfaces en Next.js y TypeScript. Cinco años entregando software en producción.</div>
       <div class="contacto">
         <span><b>Correo</b>santiaguirrem@gmail.com</span>
         <span><b>Tel</b>+593 99 395 4787</span>
         <span><b>Ubicación</b>Loja, Ecuador</span>
         <span><b>LinkedIn</b>in/santiago-aguirre-93b4251b1</span>
         <span><b>GitHub</b>github.com/utpl</span>
+        <span><b>Web</b>cv-santiago-aguirre.vercel.app</span>
       </div>
     </div>
     <img class="foto" src="data:image/jpeg;base64,${foto}" alt="Hermel Santiago Aguirre Montaño">
@@ -218,7 +222,7 @@ li::before{content:'';position:absolute;left:0;top:1.7mm;width:2mm;height:.45mm;
 
   <section>
     <h2>Perfil profesional</h2>
-    <p class="perfil">Ingeniero en Sistemas con cinco años de experiencia en el ecosistema editorial y universitario, especializado en plataformas de gestión del aprendizaje. Llevo cursos completos desde el guion editorial hasta el aula virtual publicada: virtualización bajo estándares de diseño instruccional, desarrollo de recursos interactivos y automatización de los procesos repetitivos con Python y las APIs de Canvas. Sumo administración de servidores y seguridad de la información —curso el Máster en Ciberseguridad en UNIR—, lo que me permite responsabilizarme del ciclo completo: desarrollar, desplegar, endurecer y mantener.</p>
+    <p class="perfil">Desarrollador full stack con cinco años construyendo software que se usa a diario. En el back trabajo con Python —FastAPI, SQLAlchemy, PostgreSQL, Redis— y en el front con TypeScript, React y Next.js: escribo sistemas completos, del modelo de datos y la API hasta la interfaz y el despliegue. Mi experiencia viene del sector editorial y universitario, donde los problemas rara vez son de manual: integrar plataformas con APIs de terceros, procesar documentos con reglas de negocio complejas y automatizar procesos que antes tomaban semanas.</p>
   </section>
 
   <section>
@@ -242,6 +246,7 @@ li::before{content:'';position:absolute;left:0;top:1.7mm;width:2mm;height:.45mm;
         <h3><span>${esc(p.titulo)}</span><em>${esc(p.anio)}</em></h3>
         <p>${esc(p.desc)}</p>
         <div class="stack">${esc(p.stack)}</div>
+        ${p.enlace ? `<div class="link">${esc(p.enlace)}</div>` : ''}
       </article>`).join('')}
     </div>
   </section>

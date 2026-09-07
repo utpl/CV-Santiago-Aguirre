@@ -15,6 +15,8 @@ export interface Project {
   summary: string;
   highlights: string[];
   stack: string[];
+  repo?: string;
+  demo?: string;
 }
 
 export interface Education {
