@@ -168,6 +168,7 @@ export const projects: Project[] = [
     ],
     stack: ['HTML', 'CSS', 'JavaScript', 'SVG', 'React', 'Accesibilidad'],
     repo: 'https://github.com/utpl/Recursos-Educativos',
+    demo: 'https://recursos-educativos-rho.vercel.app',
   },
 ];
 
