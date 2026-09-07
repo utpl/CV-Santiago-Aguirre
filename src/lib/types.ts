@@ -1,9 +1,20 @@
 export interface Experience {
   position: string;
   company: string;
+  location?: string;
   period: string;
   current?: boolean;
+  summary: string;
   tasks: string[];
+}
+
+export interface Project {
+  title: string;
+  role: string;
+  year: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
 }
 
 export interface Education {
@@ -20,21 +31,18 @@ export interface Certification {
   year: string;
 }
 
-export interface Skill {
-  name: string;
-  level: number;
-}
-
-export interface SkillCategory {
-  icon: React.ComponentType<{ className?: string }>;
+export interface StackGroup {
   title: string;
-  color: string;
-  skills: Skill[];
+  items: string[];
 }
 
 export interface Language {
   name: string;
   level: string;
-  flag: string;
-  percentage: number;
+  detail: string;
+}
+
+export interface Stat {
+  value: string;
+  label: string;
 }

@@ -1,23 +1,29 @@
-import { Hero } from '@/components/sections/hero';
-import { About } from '@/components/sections/about';
-import { Skills } from '@/components/sections/skills';
-import { Experience } from '@/components/sections/experience';
-import { Education } from '@/components/sections/education';
-import { Languages } from '@/components/sections/languages';
-import { DownloadCV } from '@/components/sections/download-cv';
-import { Footer } from '@/components/sections/footer';
+import { Nav } from '@/components/nav';
+import { Hero } from '@/components/hero';
+import { About } from '@/components/about';
+import { Experience } from '@/components/experience';
+import { Projects } from '@/components/projects';
+import { Stack } from '@/components/stack';
+import { Education } from '@/components/education';
+import { Contact } from '@/components/contact';
+import { Footer } from '@/components/footer';
+import { WhatsAppButton } from '@/components/whatsapp-button';
 
-export default function CVPortfolio() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
-      <Hero />
-      <About />
-      <Skills />
-      <Experience />
-      <Education />
-      <Languages />
-      <DownloadCV />
+    <>
+      <Nav />
+      <main className="relative">
+        <Hero />
+        <About />
+        <Experience />
+        <Projects />
+        <Stack />
+        <Education />
+        <Contact />
+      </main>
       <Footer />
-    </div>
+      <WhatsAppButton />
+    </>
   );
 }

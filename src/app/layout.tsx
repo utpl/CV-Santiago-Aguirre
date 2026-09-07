@@ -1,76 +1,116 @@
-import type { Metadata } from 'next'
-import './globals.css'
-import { WhatsAppButton } from '@/components/ui/whatsapp-button'
+import type { Metadata, Viewport } from 'next';
+import localFont from 'next/font/local';
+import './globals.css';
+import { PROFILE, CONTACT, SITE_URL } from '@/lib/site';
+
+// Fuentes auto-alojadas: sin peticiones a Google en build ni en runtime.
+const sans = localFont({
+  src: './fonts/inter-latin-variable.woff2',
+  weight: '100 900',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-sans',
+  fallback: ['system-ui', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+});
+
+const display = localFont({
+  src: './fonts/playfair-latin-variable.woff2',
+  weight: '400 900',
+  style: 'normal',
+  display: 'swap',
+  variable: '--font-display',
+  fallback: ['Georgia', 'Times New Roman', 'serif'],
+});
+
+const description =
+  'Ingeniero en Sistemas especializado en Canvas LMS, Moodle, automatización de contenido educativo y seguridad de la información. Loja, Ecuador.';
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Hermel Aguirre - Ingeniero en Sistemas | Especialista TIC',
-    template: '%s | Hermel Aguirre'
+    default: `${PROFILE.shortName} — ${PROFILE.title}`,
+    template: `%s · ${PROFILE.shortName}`,
   },
-  description: 'CV profesional de Hermel Santiago Aguirre Montaño - Especialista en Moodle, Canvas, Ciberseguridad y Desarrollo de Software. Más de 3 años de experiencia en plataformas LMS.',
-  keywords: ['Ingeniero en Sistemas', 'Desarrollador', 'Moodle', 'Canvas', 'Ciberseguridad', 'LMS', 'Ecuador', 'UTPL', 'EdiLoja'],
-  authors: [{ name: 'Hermel Santiago Aguirre Montaño' }],
-  creator: 'Hermel Santiago Aguirre Montaño',
-  publisher: 'Hermel Santiago Aguirre Montaño',
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL('https://hermel-aguirre.dev'),
-  alternates: {
-    canonical: '/',
-  },
+  description,
+  keywords: [
+    'Ingeniero en Sistemas',
+    'Canvas LMS',
+    'Moodle',
+    'Tecnología educativa',
+    'Diseño instruccional',
+    'Ciberseguridad',
+    'Python',
+    'Next.js',
+    'Loja',
+    'Ecuador',
+    'UTPL',
+    'EdiLoja',
+  ],
+  authors: [{ name: PROFILE.name }],
+  creator: PROFILE.name,
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Hermel Aguirre - Ingeniero en Sistemas | Especialista TIC',
-    description: 'CV profesional de Hermel Santiago Aguirre Montaño - Especialista en Moodle, Canvas, Ciberseguridad y Desarrollo de Software.',
-    url: 'https://hermel-aguirre.dev',
-    siteName: 'Hermel Aguirre Portfolio',
+    type: 'profile',
     locale: 'es_EC',
-    type: 'website',
-    images: [
-      {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Hermel Aguirre - Ingeniero en Sistemas',
-      },
-    ],
+    url: SITE_URL,
+    siteName: `${PROFILE.shortName} · Portafolio`,
+    title: `${PROFILE.shortName} — ${PROFILE.title}`,
+    description,
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Hermel Aguirre - Ingeniero en Sistemas | Especialista TIC',
-    description: 'CV profesional de Hermel Santiago Aguirre Montaño - Especialista en Moodle, Canvas, Ciberseguridad y Desarrollo de Software.',
-    images: ['/og-image.jpg'],
-    creator: '@hermelaguirre',
+    title: `${PROFILE.shortName} — ${PROFILE.title}`,
+    description,
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   },
-  verification: {
-    google: 'your-google-verification-code',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#080D16',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: PROFILE.name,
+  alternateName: PROFILE.shortName,
+  jobTitle: PROFILE.title,
+  email: `mailto:${CONTACT.email}`,
+  url: SITE_URL,
+  image: `${SITE_URL}${PROFILE.photo}`,
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Loja',
+    addressCountry: 'EC',
   },
-}
+  sameAs: [CONTACT.linkedin, CONTACT.github],
+  knowsAbout: [
+    'Canvas LMS',
+    'Moodle',
+    'Diseño instruccional',
+    'Automatización de contenido',
+    'Ciberseguridad',
+    'Python',
+  ],
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    <html lang="es">
-      <body>
+    <html lang="es" className={`${sans.variable} ${display.variable}`}>
+      <body className="grain">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {children}
-        <WhatsAppButton />
       </body>
     </html>
-  )
+  );
 }
